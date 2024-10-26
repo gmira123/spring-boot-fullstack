@@ -1,0 +1,23 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "parcauto-api",
+      "image": "dani606/parcauto-api",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8081
+        }
+      ],
+      "environment": [
+        {
+          "name" : "SPRING_DATASOURCE_URL",
+          "value": "jdbc:postgresql://awseb-e-85pmtrtdkm-stack-awsebrdsdatabase-tokwaot1zrei.cdckg2cowrre.eu-north-1.rds.amazonaws.com:5432/parcauto"
+        }
+      ]
+    }
+  ]
+}
