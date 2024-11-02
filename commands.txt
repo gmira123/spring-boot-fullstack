@@ -1,0 +1,42 @@
+#Run docker compose
+docker compose up -d
+
+#Show runing containers
+docker compose ps
+
+#Run postgres
+docker exec -it postgres bash
+
+#connect to postgres
+psql -U dani
+#List databases :    \l
+#Quit postgress :    \q
+#Quit container :    ctrl d
+
+#connect te db   :   \c vehicule
+#Init sequence select setval('vehicule_id_seq', 1, false);
+
+
+docker network ls
+
+docker run --name parcauto-api --rm -p 8081:8081 \
+--network parcauto_db dani606/parcauto-api \
+--spring.datasource.url=jdbc:postgresql://db:5432/parcauto
+
+#start
+docker compose up -d
+
+#remove
+docker compose down
+
+#stop
+docker compose stop
+
+ssh -i .\dani.pem ec2-user@51.21.140.19
+#generate unique number
+date '+%d.%m.%Y.%H.%M.%S'
+sed -i -E 's_(dani606/parcauto-api:)([^"]*)_\1'${BUILD_NUMBER}'_' Dockerrun.aws.json
+
+docker run --rm -it postgres:alpine bash
+
+psql -U dani -d parcauto -h awseb-e-85pmtrtdkm-stack-awsebrdsdatabase-tokwaot1zrei.cdckg2cowrre.eu-north-1.rds.amazonaws.com

@@ -11,10 +11,6 @@
     <groupId>com.dani.dcl</groupId>
     <artifactId>parcauto-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <organization>
-        <name>dani606</name>
-        <url>https://dani.com</url>
-    </organization>
     <name>parcauto</name>
     <description>parcauto</description>
     <url/>
@@ -32,6 +28,9 @@
     </scm>
     <properties>
         <java.version>17</java.version>
+        <docker.username>dani606</docker.username>
+        <docker.image.name>parcauto-api</docker.image.name>
+        <docker.image.tag/>
     </properties>
     <dependencies>
         <dependency>
@@ -193,7 +192,7 @@
                         </platforms>
                     </from>
                     <to>
-                        <image>docker.io/${organization.name}/${project.artifactId}:${project.version}</image>
+                        <image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
                         <tags>
                             <tag>latest</tag>
                         </tags>
