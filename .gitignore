@@ -4,7 +4,7 @@ HELP.md
 */node_modules
 mvnv.cmd
 mvnv
-commands
+./commands.txt
 
 ### STS ###
 .apt_generated
