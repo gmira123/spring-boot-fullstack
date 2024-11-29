@@ -14,6 +14,7 @@ import java.util.Random;
 public class ParcautoApplication {
     public static void main(String[] args) {
         SpringApplication.run(ParcautoApplication.class, args);
+        
     }
 
     @Bean
